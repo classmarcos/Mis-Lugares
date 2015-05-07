@@ -8,5 +8,6 @@
     <string name="accion_preferencias">Preferencias</string>
     <string name="accion_acerca_de">Acerda de</string>
     <string name="accion_salir">Salir</string>
+    <string name="title_activity_acerda_de">AcerdaDe</string>
 
 </resources>

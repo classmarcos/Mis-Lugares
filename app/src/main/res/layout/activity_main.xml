@@ -37,13 +37,13 @@
         android:layout_width="match_parent"
         android:text="@string/accion_acerca_de"
 
-        />
+        android:onClick="lanzarAcercaDe" />
     <Button
         android:id="@+id/Button4"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="@string/accion_salir"
 
-        />
+        android:onClick="salir" />
 
 </LinearLayout>
