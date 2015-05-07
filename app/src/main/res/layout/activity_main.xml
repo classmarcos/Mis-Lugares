@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:text="@string/accion_preferencias"
 
-        />
+        android:onClick="lanzarPreferencias" />
     <Button
         android:id="@+id/Button3"
         android:layout_height="wrap_content"
@@ -38,6 +38,7 @@
         android:text="@string/accion_acerca_de"
 
         android:onClick="lanzarAcercaDe" />
+
     <Button
         android:id="@+id/Button4"
         android:layout_height="wrap_content"
