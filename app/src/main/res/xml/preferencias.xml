@@ -19,4 +19,18 @@
         android:entryValues="@array/tiposOrdenValores"
         android:defaultValue="1"/>
 
+    <PreferenceScreen android:title="Notificaiones por correo">
+    <CheckBoxPreference
+        android:key="notificacionesCorreo"
+        android:title="Recibir Correos"
+        android:summary="Recibir correos con informacion sobre lugares"
+
+        />
+    <EditTextPreference
+       android:title="Direccion de correo"
+        android:summary="Cuenta donde se mandaran las notificaciones"
+        />
+
+    </PreferenceScreen>
+
 </PreferenceScreen>

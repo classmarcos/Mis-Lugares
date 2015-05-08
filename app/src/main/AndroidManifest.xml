@@ -29,6 +29,13 @@
 
             >
         </activity>
+        <activity android:name="VistaLugar"
+            android:label="vista_lugar">
+        </activity>
+        <activity android:name="EdicionLugar"
+            android:label="edicion_lugar">
+        </activity>
+
     </application>
 
 </manifest>
