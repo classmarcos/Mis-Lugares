@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -21,6 +23,15 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
 
+
+        ArrayAdapter adaptador = new ArrayAdapter(this,
+                R.layout.elemento_lista,
+                R.id.nombre,
+                Lugares.listaNombres()); /* = new ArrayAdapter(this,
+                android.R.layout.simple_list_item_1,
+                Lugares.listaNombres());*/
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adaptador);
 
 
     }

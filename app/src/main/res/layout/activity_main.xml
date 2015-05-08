@@ -8,7 +8,7 @@
     android:padding="30dp"
     tools:context=".MainActivity">
 
-    <TextView
+<!--    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
@@ -46,5 +46,12 @@
         android:text="@string/accion_salir"
 
         android:onClick="salir" />
+-->
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:drawSelectorOnTop="false" />
 
 </LinearLayout>
