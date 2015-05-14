@@ -9,30 +9,28 @@ import java.util.List;
 public class Lugares {
 
     protected static List<Lugar> vectorLugares = ejemploLugares();
-    private long fecha;
-    private TipoLugar tipo;
-    private GeoPunto posicion;
-    private Lugar lugar;
+    final static String TAG = "MisLugares";
+    protected static GeoPunto posicionActual = new GeoPunto(0, 0);
 
     public Lugares() {
         vectorLugares = ejemploLugares();
     }
 
-    static Lugar elemento(int id) {
+    static Lugar elemento(int id){
         return vectorLugares.get(id);
     }
 
-    static void anyade(Lugar lugar) {
+    static void anyade(Lugar lugar){
         vectorLugares.add(lugar);
     }
 
-    static int nuevo() {
+    static int nuevo(){
         Lugar lugar = new Lugar();
         vectorLugares.add(lugar);
-        return vectorLugares.size() - 1;
+        return vectorLugares.size()-1;
     }
 
-    static void borrar(int id) {
+    static void borrar(int id){
         vectorLugares.remove(id);
     }
 
@@ -42,10 +40,9 @@ public class Lugares {
 
     public static ArrayList<Lugar> ejemploLugares() {
         ArrayList<Lugar> lugares = new ArrayList<Lugar>();
-
         lugares.add(new Lugar("Escuela Politécnica Superior de Gandía",
                 "C/ Paranimf, 1 46730 Gandia (SPAIN)", -0.166093, 38.995656,
-                TipoLugar.EDUCACION, 962849300, "http://www.epsg.upv.es",
+                TipoLugar.EDUCACION,962849300, "http://www.epsg.upv.es",
                 "Uno de los mejores lugares para formarse.", 3));
 
         lugares.add(new Lugar("Al de siempre",
@@ -61,6 +58,7 @@ public class Lugares {
         lugares.add(new Lugar("Barranco del Infierno",
                 "Vía Verde del río Serpis. Villalonga (Valencia)",
                 -0.295058, 38.867180, TipoLugar.NATURALEZA,
+
                 0, "http://sosegaos.blogspot.com.es/2009/02/lorcha-villalonga-via-verde-del-rio.html",
                 "Espectacular ruta para bici o andar", 4));
 
@@ -71,12 +69,11 @@ public class Lugares {
                 "El típico centro comercial", 2));
 
         return lugares;
-
     }
 
-    public static List listaNombres(){
-        ArrayList resultado = new ArrayList();
-        for (Lugar lugar:vectorLugares){
+    static List<String> listaNombres() {
+        ArrayList<String> resultado = new ArrayList<String>();
+        for (Lugar lugar : vectorLugares) {
             resultado.add(lugar.getNombre());
         }
         return resultado;

@@ -5,25 +5,24 @@ package com.example.suarez.mis_lugares;
  */
 public class Lugar {
 
-
     private String nombre;
     private String direccion;
     private GeoPunto posicion;
     private String foto;
-    private TipoLugar tipoLugar;
-
     private int telefono;
     private String url;
     private String comentario;
     private long fecha;
     private float valoracion;
+    private TipoLugar tipo;
 
     public Lugar(String nombre, String direccion, double longitud,
-                 double latitud, TipoLugar tipoLugar, int telefono, String url, String comentario,
-                 int valoracion) {
+                 double latitud, TipoLugar tipo, int telefono, String url,
+                 String comentario, int valoracion) {
         fecha = System.currentTimeMillis();
         posicion = new GeoPunto(longitud, latitud);
-        this.tipoLugar = tipoLugar;
+        this.tipo = tipo;
+
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -32,8 +31,34 @@ public class Lugar {
         this.valoracion = valoracion;
     }
 
-    Lugar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Lugar() {
+        fecha = System.currentTimeMillis();
+        posicion = new GeoPunto(0, 0);
+        tipo = TipoLugar.OTROS;
+    }
+
+    public TipoLugar getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoLugar tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Lugar{" +
+                "nombre='" + nombre + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", posicion=" + posicion +
+                ", foto='" + foto + '\'' +
+                ", telefono=" + telefono +
+                ", url='" + url + '\'' +
+                ", comentario='" + comentario + '\'' +
+                ", fecha=" + fecha +
+                ", valoracion=" + valoracion +
+                ", tipo=" + tipo +
+                '}';
     }
 
     public String getNombre() {
@@ -66,14 +91,6 @@ public class Lugar {
 
     public void setFoto(String foto) {
         this.foto = foto;
-    }
-
-    public TipoLugar getTipo() {
-        return tipoLugar;
-    }
-
-    public void setTipo(TipoLugar tipo) {
-        this.tipoLugar = tipo;
     }
 
     public int getTelefono() {
@@ -114,16 +131,6 @@ public class Lugar {
 
     public void setValoracion(float valoracion) {
         this.valoracion = valoracion;
-    }
-
-
-    @Override
-    public String toString() {
-
-        return "Lugar [nombre=" + nombre + ", direccion=" + direccion
-                + ", posicion=" + posicion + ", foto=" + foto + ", telefono="
-                + telefono + ", url=" + url + ", comentario=" + comentario
-                + ", fecha=" + fecha + ", valoracion=" + valoracion + "]";
     }
 }
 

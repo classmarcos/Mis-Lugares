@@ -9,5 +9,9 @@
     <string name="accion_acerca_de">Acerda de</string>
     <string name="accion_salir">Salir</string>
     <string name="title_activity_acerda_de">AcerdaDe</string>
+    <string name="about">about</string>
+    <string name="preferences">preferences</string>
+    <string name="search">search</string>
+
 
 </resources>

@@ -1,52 +1,67 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="30dp"
-    tools:context=".MainActivity">
-
-<!--    <TextView
+    android:layout_height="match_parent">
+    <ListView
+        android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
+        android:layout_height="match_parent"
+        android:drawSelectorOnTop="false"/>
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No hay lugares"/>
+</FrameLayout>
+
+    <!-- <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         android:gravity="center"
-        android:textSize="25sp"
-        android:layout_marginBottom="20dp"
-        />
+        android:padding="30dp"
+        tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/Button1"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="@string/accion_mostrar"
+       <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_marginBottom="20dp"
+            />
 
-         />
-    <Button
-        android:id="@+id/Button2"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="@string/accion_preferencias"
+        <Button
+            android:id="@+id/Button1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/accion_mostrar"
 
-        android:onClick="lanzarPreferencias" />
-    <Button
-        android:id="@+id/Button3"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="@string/accion_acerca_de"
+             />
+        <Button
+            android:id="@+id/Button2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/accion_preferencias"
 
-        android:onClick="lanzarAcercaDe" />
+            android:onClick="lanzarPreferencias" />
+        <Button
+            android:id="@+id/Button3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/accion_acerca_de"
 
-    <Button
-        android:id="@+id/Button4"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:text="@string/accion_salir"
+            android:onClick="lanzarAcercaDe" />
 
-        android:onClick="salir" />
--->
+        <Button
+            android:id="@+id/Button4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/accion_salir"
+
+            android:onClick="salir" />
+
 
     <ListView
         android:id="@+id/listView"
@@ -54,4 +69,4 @@
         android:layout_height="match_parent"
         android:drawSelectorOnTop="false" />
 
-</LinearLayout>
+</LinearLayout>-->

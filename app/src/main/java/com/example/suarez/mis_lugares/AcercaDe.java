@@ -1,22 +1,18 @@
 package com.example.suarez.mis_lugares;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 
 public class AcercaDe extends Activity {
 
+    /**
+     * Called when the activity is first created.
+     * @param savedInstanceState State when the activity is launched
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acerca_de);
-
-
     }
-
-
-
 }

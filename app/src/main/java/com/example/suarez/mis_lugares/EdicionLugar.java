@@ -1,27 +1,25 @@
 package com.example.suarez.mis_lugares;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-
 /**
  * Created by suarez on 08/05/2015.
  */
 public class EdicionLugar  extends ActionBarActivity {
-
+    private long id;
+    private Lugar lugar;
     private EditText nombre;
     private Spinner tipo;
     private EditText direccion;
     private EditText telefono;
     private EditText url;
     private EditText comentario;
-    private long id;
-    private Lugar lugar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,25 +33,46 @@ public class EdicionLugar  extends ActionBarActivity {
         nombre = (EditText) findViewById(R.id.nombre);
         nombre.setText(lugar.getNombre());
 
+        if(lugar.getDireccion() == null || lugar.getDireccion().equals("")) {
+            findViewById(R.id.direccion).setVisibility(View.GONE);
+            findViewById(R.id.logo_direccion).setVisibility(View.GONE);
+        } else {
+            direccion = (EditText) findViewById(R.id.direccion);
+            direccion.setText(lugar.getDireccion());
+        }
+
+        if(lugar.getTelefono() == 0){
+            findViewById(R.id.telefono).setVisibility(View.GONE);
+            findViewById(R.id.logo_telefono).setVisibility(View.GONE);
+        } else {
+            telefono = (EditText) findViewById(R.id.telefono);
+            telefono.setText(Integer.toString(lugar.getTelefono()));
+        }
+
+        if(lugar.getUrl() == null || lugar.getUrl().equals("")){
+            findViewById(R.id.url).setVisibility(View.GONE);
+            findViewById(R.id.logo_url).setVisibility(View.GONE);
+        } else {
+            url = (EditText) findViewById(R.id.url);
+            url.setText(lugar.getUrl());
+        }
+
+        if(lugar.getComentario() == null || lugar.getComentario().equals("")){
+            findViewById(R.id.comentario).setVisibility(View.GONE);
+            findViewById(R.id.logo_comentarios).setVisibility(View.GONE);
+        } else {
+            comentario = (EditText) findViewById(R.id.comentario);
+            comentario.setText(lugar.getComentario());
+        }
+
         tipo = (Spinner) findViewById(R.id.tipo);
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, TipoLugar.getNombres());
+        ArrayAdapter<String> adaptador =
+                new ArrayAdapter<String>(this,
+                        android.R.layout.simple_spinner_item,
+                        TipoLugar.getNombres());
         adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         tipo.setAdapter(adaptador);
         tipo.setSelection(lugar.getTipo().ordinal());
-
-        direccion = (EditText) findViewById(R.id.direccion);
-        direccion.setText(lugar.getDireccion());
-
-        telefono = (EditText) findViewById(R.id.telefono);
-        telefono.setText(Integer.toString(lugar.getTelefono()));
-
-        url = (EditText) findViewById(R.id.url);
-        url.setText(lugar.getUrl());
-
-        comentario = (EditText) findViewById(R.id.comentario);
-        comentario.setText(lugar.getComentario());
-
     }
 
     @Override
@@ -64,8 +83,10 @@ public class EdicionLugar  extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.accion_guardar:
+        switch(item.getItemId()) {
+            case R.id.cancelar:
+                return true;
+            case R.id.guardar_lugar:
                 lugar.setNombre(nombre.getText().toString());
                 lugar.setTipo(TipoLugar.values()[tipo.getSelectedItemPosition()]);
                 lugar.setDireccion(direccion.getText().toString());
@@ -73,12 +94,9 @@ public class EdicionLugar  extends ActionBarActivity {
                 lugar.setUrl(url.getText().toString());
                 lugar.setComentario(comentario.getText().toString());
                 finish();
-                return true;
-            case R.id.accion_cancelar:
-                finish();
-                return true;
             default:
-                return super.onOptionsItemSelected(item);
+                super.onOptionsItemSelected(item);
         }
+        return true;
     }
 }

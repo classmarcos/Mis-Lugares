@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.suarez.mis_lugares" >
 
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,10 +33,10 @@
             >
         </activity>
         <activity android:name="VistaLugar"
-            android:label="vista_lugar">
+            android:label="Vista Lugares">
         </activity>
         <activity android:name="EdicionLugar"
-            android:label="edicion_lugar">
+            android:label="Edicion de lugar">
         </activity>
 
     </application>
